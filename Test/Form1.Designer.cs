@@ -104,7 +104,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 136);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 53);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(690, 150);
@@ -113,7 +113,7 @@
             // 
             // Btn_Load
             // 
-            this.Btn_Load.Location = new System.Drawing.Point(12, 95);
+            this.Btn_Load.Location = new System.Drawing.Point(10, 12);
             this.Btn_Load.Name = "Btn_Load";
             this.Btn_Load.Size = new System.Drawing.Size(150, 35);
             this.Btn_Load.TabIndex = 1;
@@ -123,42 +123,42 @@
             // 
             // TxB_Themengebiet
             // 
-            this.TxB_Themengebiet.Location = new System.Drawing.Point(12, 320);
+            this.TxB_Themengebiet.Location = new System.Drawing.Point(10, 237);
             this.TxB_Themengebiet.Name = "TxB_Themengebiet";
             this.TxB_Themengebiet.Size = new System.Drawing.Size(110, 20);
             this.TxB_Themengebiet.TabIndex = 2;
             // 
             // TxB_Frage
             // 
-            this.TxB_Frage.Location = new System.Drawing.Point(128, 320);
+            this.TxB_Frage.Location = new System.Drawing.Point(126, 237);
             this.TxB_Frage.Name = "TxB_Frage";
             this.TxB_Frage.Size = new System.Drawing.Size(110, 20);
             this.TxB_Frage.TabIndex = 3;
             // 
             // TxB_Antwort1
             // 
-            this.TxB_Antwort1.Location = new System.Drawing.Point(244, 320);
+            this.TxB_Antwort1.Location = new System.Drawing.Point(242, 237);
             this.TxB_Antwort1.Name = "TxB_Antwort1";
             this.TxB_Antwort1.Size = new System.Drawing.Size(110, 20);
             this.TxB_Antwort1.TabIndex = 4;
             // 
             // TxB_Antwort2
             // 
-            this.TxB_Antwort2.Location = new System.Drawing.Point(360, 320);
+            this.TxB_Antwort2.Location = new System.Drawing.Point(358, 237);
             this.TxB_Antwort2.Name = "TxB_Antwort2";
             this.TxB_Antwort2.Size = new System.Drawing.Size(110, 20);
             this.TxB_Antwort2.TabIndex = 5;
             // 
             // TxB_Antwort3
             // 
-            this.TxB_Antwort3.Location = new System.Drawing.Point(476, 320);
+            this.TxB_Antwort3.Location = new System.Drawing.Point(474, 237);
             this.TxB_Antwort3.Name = "TxB_Antwort3";
             this.TxB_Antwort3.Size = new System.Drawing.Size(110, 20);
             this.TxB_Antwort3.TabIndex = 6;
             // 
             // TxB_Antwort4
             // 
-            this.TxB_Antwort4.Location = new System.Drawing.Point(592, 320);
+            this.TxB_Antwort4.Location = new System.Drawing.Point(590, 237);
             this.TxB_Antwort4.Name = "TxB_Antwort4";
             this.TxB_Antwort4.Size = new System.Drawing.Size(110, 20);
             this.TxB_Antwort4.TabIndex = 7;
@@ -166,7 +166,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 304);
+            this.label1.Location = new System.Drawing.Point(31, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 8;
@@ -175,7 +175,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 304);
+            this.label2.Location = new System.Drawing.Point(159, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 9;
@@ -185,7 +185,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(273, 304);
+            this.label3.Location = new System.Drawing.Point(271, 221);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 10;
@@ -194,7 +194,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(390, 304);
+            this.label4.Location = new System.Drawing.Point(388, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 11;
@@ -203,7 +203,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(504, 304);
+            this.label5.Location = new System.Drawing.Point(502, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 12;
@@ -212,7 +212,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(617, 304);
+            this.label6.Location = new System.Drawing.Point(615, 221);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 13;
@@ -220,7 +220,7 @@
             // 
             // Btn_CreatXml
             // 
-            this.Btn_CreatXml.Location = new System.Drawing.Point(168, 95);
+            this.Btn_CreatXml.Location = new System.Drawing.Point(166, 12);
             this.Btn_CreatXml.Name = "Btn_CreatXml";
             this.Btn_CreatXml.Size = new System.Drawing.Size(150, 35);
             this.Btn_CreatXml.TabIndex = 14;
@@ -232,7 +232,7 @@
             // 
             this.cBx_Dateipfad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBx_Dateipfad.FormattingEnabled = true;
-            this.cBx_Dateipfad.Location = new System.Drawing.Point(476, 103);
+            this.cBx_Dateipfad.Location = new System.Drawing.Point(474, 20);
             this.cBx_Dateipfad.Name = "cBx_Dateipfad";
             this.cBx_Dateipfad.Size = new System.Drawing.Size(220, 21);
             this.cBx_Dateipfad.TabIndex = 15;
@@ -245,7 +245,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(320, 95);
+            this.button1.Location = new System.Drawing.Point(318, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 35);
             this.button1.TabIndex = 16;
@@ -256,7 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 352);
+            this.ClientSize = new System.Drawing.Size(713, 347);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cBx_Dateipfad);
             this.Controls.Add(this.Btn_CreatXml);

@@ -13,14 +13,24 @@ namespace Test
     public partial class Form1 : Form
     {
         string filepath;
-        DataSet ds = new DataSet();
-        DataSet Dateipfade = new DataSet();
+        DataSet tempDs = new DataSet();
         bool geändert = false;
+        Data Dateipfade = new Data();
         
         
         public Form1()
         {
             InitializeComponent();
+            tempDs.ReadXml(@"C:\Users\DomiHasi\Documents\Arbeit\Visual Studio\XML_Dateien\Dateipfade.xml");
+            int i = 0;
+            foreach (DataRow row in tempDs.Tables[0].Rows)
+            {
+                DataRow tempRow = Dateipfade.Speicherort.NewRow();
+                tempRow["Anzeige"] = tempDs.Tables[0].Rows[i]["Anzeige"].ToString();
+                tempRow["Dateipfad"] = tempDs.Tables[0].Rows[i]["Dateipfad"].ToString();
+                Dateipfade.Tables[0].Rows.Add(tempRow);
+                i++;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -48,10 +58,8 @@ namespace Test
 
         private void Btn_Load_Click(object sender, EventArgs e)
         {
-            
-            DataRow newCustomersRow = ds.Tables[0].NewRow();
 
-            DataRow dr = ds.Tables[0].NewRow();
+            DataRow dr = Dateipfade.Fragenkatalog.NewRow();
             if(TxB_Themengebiet.TextLength == 0 || TxB_Frage.TextLength == 0|| TxB_Antwort1.TextLength == 0 || TxB_Antwort2.TextLength == 0 || TxB_Antwort3.TextLength == 0 || TxB_Antwort4.TextLength == 0)
             {
                 if(TxB_Themengebiet.TextLength == 0)
@@ -87,7 +95,7 @@ namespace Test
                 dr["Antwort2"] = TxB_Antwort4.Text;
                 dr["Antwort3"] = TxB_Antwort2.Text;
                 dr["Antwort4"] = TxB_Antwort3.Text;
-                ds.Tables[0].Rows.Add(dr);
+                tempDs.Tables[0].Rows.Add(dr);
                 TxB_Themengebiet.Text = "";
                 TxB_Frage.Text = "";
                 TxB_Antwort1.Text = "";
@@ -96,7 +104,7 @@ namespace Test
                 TxB_Antwort4.Text = "";
                 geändert = true;
             }
-            dataGridView1.DataSource = ds.Tables[0];
+            dataGridView1.DataSource = tempDs.Tables[0];
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -108,7 +116,7 @@ namespace Test
         {
             if (geändert)
             {
-                ds.WriteXml(filepath);
+                tempDs.WriteXml(filepath);
                 geändert = false;
             }
             else
@@ -120,16 +128,36 @@ namespace Test
 
         private void cBx_Dateipfad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView1.
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            Dateipfade.Fragenkatalog.Clear();
             switch(cBx_Dateipfad.Text)
             {
-                case "Fragenkatalog Test1": filepath = Dateipfade.Tables[0].Rows[0]["Dateipfad"].ToString(); break;
-                case "Fragenkatalog Test2": filepath = Dateipfade.Tables[0].Rows[1]["Dateipfad"].ToString(); break;
-                case "Fragenkatalog Test3": filepath = Dateipfade.Tables[0].Rows[2]["Dateipfad"].ToString(); break;
-                case "Fragenkatalog Test4": filepath = Dateipfade.Tables[0].Rows[3]["Dateipfad"].ToString(); break;
+                case "Fragenkatalog Test1": filepath = Dateipfade.Speicherort.Rows[0]["Dateipfad"].ToString(); break;
+                case "Fragenkatalog Test2": filepath = Dateipfade.Speicherort.Rows[1]["Dateipfad"].ToString(); break;
+                case "Fragenkatalog Test3": filepath = Dateipfade.Speicherort.Rows[2]["Dateipfad"].ToString(); break;
+                case "Fragenkatalog Test4": filepath = Dateipfade.Speicherort.Rows[3]["Dateipfad"].ToString(); break;
             }
-            ds.ReadXml(filepath);
-            dataGridView1.DataSource = ds.Tables[0];
+           
+            tempDs.Reset();
+            
+            tempDs.ReadXml(filepath);
+            int j = 0;
+            foreach (DataRow row in tempDs.Tables[0].Rows)
+            {
+                DataRow dr = Dateipfade.Fragenkatalog.NewRow();
+                dr["Themengebiet"] = tempDs.Tables[0].Rows[j]["Themengebiet"];
+                dr["Frage"] = tempDs.Tables[0].Rows[j]["Frage"];
+                dr["Antwort1"] = tempDs.Tables[0].Rows[j]["Antwort1"];
+                dr["Antwort2"] = tempDs.Tables[0].Rows[j]["Antwort2"];
+                dr["Antwort3"] = tempDs.Tables[0].Rows[j]["Antwort3"];
+                dr["Antwort4"] = tempDs.Tables[0].Rows[j]["Antwort4"];
+                Dateipfade.Fragenkatalog.Rows.Add(dr);
+
+            }
+            dataGridView1.DataSource = Dateipfade.Fragenkatalog;
+
         }
     }
 }
