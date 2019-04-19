@@ -45,6 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="change_cell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="change_cell.Designer.cs">
+      <DependentUpon>change_cell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data.cs">
+      <DependentUpon>Data.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -58,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="change_cell.resx">
+      <DependentUpon>change_cell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
