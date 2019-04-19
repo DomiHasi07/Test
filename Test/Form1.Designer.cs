@@ -1,6 +1,6 @@
 ﻿namespace Test
 {
-    partial class Form1
+    partial class Fragen
     {
         /// <summary>
         /// Required designer variable.
@@ -196,7 +196,6 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Antwort";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -347,19 +346,16 @@
             this.tbl_Layout_Main.Size = new System.Drawing.Size(997, 473);
             this.tbl_Layout_Main.TabIndex = 19;
             // 
-            // Form1
+            // Fragen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 497);
             this.Controls.Add(this.tbl_Layout_Main);
-            this.Name = "Form1";
+            this.Name = "Fragen";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.tbl_Eingabefelder.ResumeLayout(false);
             this.tbl_Eingabefelder.PerformLayout();
@@ -371,7 +367,7 @@
 
         private void DataGridView1_DataSourceChanged(object sender, System.EventArgs e)
         {
-            if(dataGridView1.Rows.Count > 0)
+            if (dataGridView1.Rows.Count > 0)
             {
                 this.dataGridView1.Columns[1].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
                 this.dataGridView1.Columns[0].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -386,7 +382,7 @@
                     dataGridView1.Columns[i].Width = colw;
                 }
             }
-            
+
         }
 
         #endregion
