@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Test
@@ -17,12 +18,12 @@ namespace Test
         bool geändert = false;
         Data Dateipfade = new Data();
         
-
-
-        public Fragen()
+        
+        public Form1()
         {
             InitializeComponent();
-            tempDs.ReadXml(@"C:\Users\DomiHasi\Documents\Arbeit\Visual Studio\XML_Dateien\Dateipfade.xml");
+            tempDs.ReadXml(@"C:\Users\DomiH\Google Drive\Arbeit\Visual_Studio\XML_Dateien\Dateipfade.xml");
+            
             int i = 0;
             foreach (DataRow row in tempDs.Tables[0].Rows)
             {
@@ -37,7 +38,7 @@ namespace Test
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Dateipfade.ReadXml(@"C:\Users\DomiHasi\Documents\Arbeit\Visual Studio\XML_Dateien\Dateipfade.xml");
+            Dateipfade.ReadXml(@"C:\Users\DomiH\Google Drive\Arbeit\Visual_Studio\XML_Dateien\Dateipfade.xml");
             
             for (int i = 0; i<Dateipfade.Tables["Speicherort"].Rows.Count;i++)
             {
@@ -55,9 +56,9 @@ namespace Test
             geändert = true;
         }
 
-        private void DataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            geändert = true;
+
         }
 
         private void Btn_Load_Click(object sender, EventArgs e)
@@ -137,14 +138,13 @@ namespace Test
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-            
-
+            Dateipfade.Fragenkatalog.Clear();
             switch(cBx_Dateipfad.Text)
             {
-                case "Fragenkatalog Test1": filepath = Dateipfade.Speicherort.Rows[0]["Dateipfad"].ToString(); break;
-                case "Fragenkatalog Test2": filepath = Dateipfade.Speicherort.Rows[1]["Dateipfad"].ToString(); break;
-                case "Fragenkatalog Test3": filepath = Dateipfade.Speicherort.Rows[2]["Dateipfad"].ToString(); break;
-                case "Fragenkatalog Test4": filepath = Dateipfade.Speicherort.Rows[3]["Dateipfad"].ToString(); break;
+                case 0: filepath = Dateipfade.Speicherort.Rows[0]["Dateipfad"].ToString(); break;
+                case 1: filepath = Dateipfade.Speicherort.Rows[1]["Dateipfad"].ToString(); break;
+                case 2: filepath = Dateipfade.Speicherort.Rows[2]["Dateipfad"].ToString(); break;
+                case 3: filepath = Dateipfade.Speicherort.Rows[3]["Dateipfad"].ToString(); break;
             }
            
             tempDs.Reset();
@@ -164,37 +164,11 @@ namespace Test
                 dr["Antwort3"] = tempDs.Tables[0].Rows[j]["Antwort3"];
                 dr["Antwort4"] = tempDs.Tables[0].Rows[j]["Antwort4"];
                 Dateipfade.Fragenkatalog.Rows.Add(dr);
-                j++;
 
             }
             dataGridView1.DataSource = Dateipfade.Fragenkatalog;
-
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_Change_Click(object sender, EventArgs e)
-        {
-            bool Btn_Change_pressed = false;
-            if (!Btn_Change_pressed)
-            {
-
-                try
-                {
-                    
-                    change_cell form2 = new change_cell();
-                    form2.send_cell = dataGridView1.CurrentCell.Value.ToString();
-                    form2.ShowDialog();
-                    dataGridView1.CurrentCell.Value = form2.ret_str;
-                }
-                catch
-                {
-                    MessageBox.Show("Bitte eine Zelle auswählen");
-                }
-            }
         }
     }
 }
