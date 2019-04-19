@@ -58,6 +58,7 @@
             this.textBox1.Size = new System.Drawing.Size(363, 47);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // tableLayoutPanel1
             // 
@@ -107,10 +108,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 127);
+            this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "change_cell";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "change_cell";
             this.Load += new System.EventHandler(this.change_cell_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.change_cell_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

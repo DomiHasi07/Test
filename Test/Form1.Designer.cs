@@ -43,18 +43,20 @@
             this.TxB_Antwort2 = new System.Windows.Forms.TextBox();
             this.TxB_Antwort3 = new System.Windows.Forms.TextBox();
             this.TxB_Antwort4 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_Themengebiet = new System.Windows.Forms.Label();
+            this.lbl_Frage = new System.Windows.Forms.Label();
+            this.lbl_richtigeAntwort = new System.Windows.Forms.Label();
+            this.lbl_Antwort2 = new System.Windows.Forms.Label();
+            this.lbl_Antwort3 = new System.Windows.Forms.Label();
+            this.lbl_Antwort4 = new System.Windows.Forms.Label();
             this.Btn_CreatXml = new System.Windows.Forms.Button();
-            this.cBx_Dateipfad = new System.Windows.Forms.ComboBox();
             this.dataSet1 = new Test.Data();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_File = new System.Windows.Forms.Button();
             this.tbl_Eingabefelder = new System.Windows.Forms.TableLayoutPanel();
+            this.TxB_Nummer = new System.Windows.Forms.TextBox();
+            this.lbl_Nummer = new System.Windows.Forms.Label();
             this.tbl_Buttons = new System.Windows.Forms.TableLayoutPanel();
+            this.Btn_Change = new System.Windows.Forms.Button();
             this.tbl_Layout_Main = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -108,6 +110,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 43);
@@ -115,14 +118,16 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(991, 377);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Btn_Load
             // 
             this.Btn_Load.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_Load.Enabled = false;
             this.Btn_Load.Location = new System.Drawing.Point(3, 3);
             this.Btn_Load.Name = "Btn_Load";
             this.Btn_Load.Size = new System.Drawing.Size(241, 28);
-            this.Btn_Load.TabIndex = 1;
+            this.Btn_Load.TabIndex = 9;
             this.Btn_Load.Text = "Load";
             this.Btn_Load.UseVisualStyleBackColor = true;
             this.Btn_Load.Click += new System.EventHandler(this.Btn_Load_Click);
@@ -130,175 +135,175 @@
             // TxB_Themengebiet
             // 
             this.TxB_Themengebiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Themengebiet.Location = new System.Drawing.Point(3, 23);
+            this.TxB_Themengebiet.Location = new System.Drawing.Point(144, 23);
             this.TxB_Themengebiet.Name = "TxB_Themengebiet";
-            this.TxB_Themengebiet.Size = new System.Drawing.Size(159, 20);
-            this.TxB_Themengebiet.TabIndex = 2;
+            this.TxB_Themengebiet.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Themengebiet.TabIndex = 3;
+            this.TxB_Themengebiet.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Frage
             // 
             this.TxB_Frage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Frage.Location = new System.Drawing.Point(168, 23);
+            this.TxB_Frage.Location = new System.Drawing.Point(285, 23);
             this.TxB_Frage.Name = "TxB_Frage";
-            this.TxB_Frage.Size = new System.Drawing.Size(159, 20);
-            this.TxB_Frage.TabIndex = 3;
+            this.TxB_Frage.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Frage.TabIndex = 4;
+            this.TxB_Frage.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Antwort1
             // 
             this.TxB_Antwort1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Antwort1.Location = new System.Drawing.Point(333, 23);
+            this.TxB_Antwort1.Location = new System.Drawing.Point(426, 23);
             this.TxB_Antwort1.Name = "TxB_Antwort1";
-            this.TxB_Antwort1.Size = new System.Drawing.Size(159, 20);
-            this.TxB_Antwort1.TabIndex = 4;
+            this.TxB_Antwort1.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Antwort1.TabIndex = 5;
+            this.TxB_Antwort1.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Antwort2
             // 
             this.TxB_Antwort2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Antwort2.Location = new System.Drawing.Point(498, 23);
+            this.TxB_Antwort2.Location = new System.Drawing.Point(567, 23);
             this.TxB_Antwort2.Name = "TxB_Antwort2";
-            this.TxB_Antwort2.Size = new System.Drawing.Size(159, 20);
-            this.TxB_Antwort2.TabIndex = 5;
+            this.TxB_Antwort2.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Antwort2.TabIndex = 6;
+            this.TxB_Antwort2.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Antwort3
             // 
             this.TxB_Antwort3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Antwort3.Location = new System.Drawing.Point(663, 23);
+            this.TxB_Antwort3.Location = new System.Drawing.Point(708, 23);
             this.TxB_Antwort3.Name = "TxB_Antwort3";
-            this.TxB_Antwort3.Size = new System.Drawing.Size(159, 20);
-            this.TxB_Antwort3.TabIndex = 6;
+            this.TxB_Antwort3.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Antwort3.TabIndex = 7;
+            this.TxB_Antwort3.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Antwort4
             // 
             this.TxB_Antwort4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Antwort4.Location = new System.Drawing.Point(828, 23);
+            this.TxB_Antwort4.Location = new System.Drawing.Point(849, 23);
             this.TxB_Antwort4.Name = "TxB_Antwort4";
-            this.TxB_Antwort4.Size = new System.Drawing.Size(160, 20);
-            this.TxB_Antwort4.TabIndex = 7;
+            this.TxB_Antwort4.Size = new System.Drawing.Size(139, 20);
+            this.TxB_Antwort4.TabIndex = 8;
+            this.TxB_Antwort4.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
-            // label1
+            // lbl_Themengebiet
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Themengebiet";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Themengebiet.AutoSize = true;
+            this.lbl_Themengebiet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Themengebiet.Location = new System.Drawing.Point(144, 0);
+            this.lbl_Themengebiet.Name = "lbl_Themengebiet";
+            this.lbl_Themengebiet.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Themengebiet.TabIndex = 8;
+            this.lbl_Themengebiet.Text = "Themengebiet";
+            this.lbl_Themengebiet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbl_Frage
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(168, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Antwort";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Frage.AutoSize = true;
+            this.lbl_Frage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Frage.Location = new System.Drawing.Point(285, 0);
+            this.lbl_Frage.Name = "lbl_Frage";
+            this.lbl_Frage.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Frage.TabIndex = 9;
+            this.lbl_Frage.Text = "Frage";
+            this.lbl_Frage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lbl_richtigeAntwort
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(333, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "richtige Antwort";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_richtigeAntwort.AutoSize = true;
+            this.lbl_richtigeAntwort.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_richtigeAntwort.Location = new System.Drawing.Point(426, 0);
+            this.lbl_richtigeAntwort.Name = "lbl_richtigeAntwort";
+            this.lbl_richtigeAntwort.Size = new System.Drawing.Size(135, 20);
+            this.lbl_richtigeAntwort.TabIndex = 10;
+            this.lbl_richtigeAntwort.Text = "richtige Antwort";
+            this.lbl_richtigeAntwort.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lbl_Antwort2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(498, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Antwort 2";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Antwort2.AutoSize = true;
+            this.lbl_Antwort2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Antwort2.Location = new System.Drawing.Point(567, 0);
+            this.lbl_Antwort2.Name = "lbl_Antwort2";
+            this.lbl_Antwort2.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Antwort2.TabIndex = 11;
+            this.lbl_Antwort2.Text = "Antwort 2";
+            this.lbl_Antwort2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lbl_Antwort3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(663, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Antwort 3";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Antwort3.AutoSize = true;
+            this.lbl_Antwort3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Antwort3.Location = new System.Drawing.Point(708, 0);
+            this.lbl_Antwort3.Name = "lbl_Antwort3";
+            this.lbl_Antwort3.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Antwort3.TabIndex = 12;
+            this.lbl_Antwort3.Text = "Antwort 3";
+            this.lbl_Antwort3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // lbl_Antwort4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(828, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Antwort 4";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Antwort4.AutoSize = true;
+            this.lbl_Antwort4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Antwort4.Location = new System.Drawing.Point(849, 0);
+            this.lbl_Antwort4.Name = "lbl_Antwort4";
+            this.lbl_Antwort4.Size = new System.Drawing.Size(139, 20);
+            this.lbl_Antwort4.TabIndex = 13;
+            this.lbl_Antwort4.Text = "Antwort 4";
+            this.lbl_Antwort4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Btn_CreatXml
             // 
             this.Btn_CreatXml.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_CreatXml.Location = new System.Drawing.Point(250, 3);
+            this.Btn_CreatXml.Enabled = false;
+            this.Btn_CreatXml.Location = new System.Drawing.Point(497, 3);
             this.Btn_CreatXml.Name = "Btn_CreatXml";
             this.Btn_CreatXml.Size = new System.Drawing.Size(241, 28);
-            this.Btn_CreatXml.TabIndex = 14;
+            this.Btn_CreatXml.TabIndex = 10;
             this.Btn_CreatXml.Text = "Create_Xml";
             this.Btn_CreatXml.UseVisualStyleBackColor = true;
             this.Btn_CreatXml.Click += new System.EventHandler(this.Btn_CreatXml_Click);
-            // 
-            // cBx_Dateipfad
-            // 
-            this.cBx_Dateipfad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cBx_Dateipfad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBx_Dateipfad.FormattingEnabled = true;
-            this.cBx_Dateipfad.Location = new System.Drawing.Point(744, 3);
-            this.cBx_Dateipfad.Name = "cBx_Dateipfad";
-            this.cBx_Dateipfad.Size = new System.Drawing.Size(244, 21);
-            this.cBx_Dateipfad.TabIndex = 15;
-            this.cBx_Dateipfad.SelectedIndexChanged += new System.EventHandler(this.cBx_Dateipfad_SelectedIndexChanged);
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button1
+            // Btn_File
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(497, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 28);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Create_Xml";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_File.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_File.Location = new System.Drawing.Point(744, 3);
+            this.Btn_File.Name = "Btn_File";
+            this.Btn_File.Size = new System.Drawing.Size(244, 28);
+            this.Btn_File.TabIndex = 1;
+            this.Btn_File.Text = "File auswählen";
+            this.Btn_File.UseVisualStyleBackColor = true;
+            this.Btn_File.Click += new System.EventHandler(this.Btn_File_Click);
             // 
             // tbl_Eingabefelder
             // 
-            this.tbl_Eingabefelder.ColumnCount = 6;
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tbl_Eingabefelder.Controls.Add(this.TxB_Themengebiet, 0, 1);
-            this.tbl_Eingabefelder.Controls.Add(this.TxB_Frage, 1, 1);
-            this.tbl_Eingabefelder.Controls.Add(this.TxB_Antwort1, 2, 1);
-            this.tbl_Eingabefelder.Controls.Add(this.TxB_Antwort2, 3, 1);
-            this.tbl_Eingabefelder.Controls.Add(this.TxB_Antwort3, 4, 1);
-            this.tbl_Eingabefelder.Controls.Add(this.TxB_Antwort4, 5, 1);
-            this.tbl_Eingabefelder.Controls.Add(this.label6, 5, 0);
-            this.tbl_Eingabefelder.Controls.Add(this.label1, 0, 0);
-            this.tbl_Eingabefelder.Controls.Add(this.label5, 4, 0);
-            this.tbl_Eingabefelder.Controls.Add(this.label2, 1, 0);
-            this.tbl_Eingabefelder.Controls.Add(this.label4, 3, 0);
-            this.tbl_Eingabefelder.Controls.Add(this.label3, 2, 0);
+            this.tbl_Eingabefelder.ColumnCount = 7;
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tbl_Eingabefelder.Controls.Add(this.TxB_Nummer, 0, 1);
+            this.tbl_Eingabefelder.Controls.Add(this.lbl_Nummer, 0, 0);
+            this.tbl_Eingabefelder.Controls.Add(this.TxB_Themengebiet, 1, 1);
+            this.tbl_Eingabefelder.Controls.Add(this.TxB_Frage, 2, 1);
+            this.tbl_Eingabefelder.Controls.Add(this.TxB_Antwort1, 3, 1);
+            this.tbl_Eingabefelder.Controls.Add(this.TxB_Antwort2, 4, 1);
+            this.tbl_Eingabefelder.Controls.Add(this.TxB_Antwort3, 5, 1);
+            this.tbl_Eingabefelder.Controls.Add(this.TxB_Antwort4, 6, 1);
+            this.tbl_Eingabefelder.Controls.Add(this.lbl_Antwort4, 6, 0);
+            this.tbl_Eingabefelder.Controls.Add(this.lbl_Themengebiet, 1, 0);
+            this.tbl_Eingabefelder.Controls.Add(this.lbl_Antwort3, 5, 0);
+            this.tbl_Eingabefelder.Controls.Add(this.lbl_Frage, 2, 0);
+            this.tbl_Eingabefelder.Controls.Add(this.lbl_Antwort2, 4, 0);
+            this.tbl_Eingabefelder.Controls.Add(this.lbl_richtigeAntwort, 3, 0);
             this.tbl_Eingabefelder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbl_Eingabefelder.Location = new System.Drawing.Point(3, 426);
             this.tbl_Eingabefelder.Name = "tbl_Eingabefelder";
@@ -308,6 +313,26 @@
             this.tbl_Eingabefelder.Size = new System.Drawing.Size(991, 44);
             this.tbl_Eingabefelder.TabIndex = 17;
             // 
+            // TxB_Nummer
+            // 
+            this.TxB_Nummer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxB_Nummer.Location = new System.Drawing.Point(3, 23);
+            this.TxB_Nummer.Name = "TxB_Nummer";
+            this.TxB_Nummer.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Nummer.TabIndex = 2;
+            this.TxB_Nummer.TextChanged += new System.EventHandler(this.Text_geändert);
+            // 
+            // lbl_Nummer
+            // 
+            this.lbl_Nummer.AutoSize = true;
+            this.lbl_Nummer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Nummer.Location = new System.Drawing.Point(3, 0);
+            this.lbl_Nummer.Name = "lbl_Nummer";
+            this.lbl_Nummer.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Nummer.TabIndex = 14;
+            this.lbl_Nummer.Text = "Nummer";
+            this.lbl_Nummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tbl_Buttons
             // 
             this.tbl_Buttons.ColumnCount = 4;
@@ -315,10 +340,10 @@
             this.tbl_Buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tbl_Buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tbl_Buttons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tbl_Buttons.Controls.Add(this.Btn_Change, 0, 0);
             this.tbl_Buttons.Controls.Add(this.Btn_Load, 0, 0);
             this.tbl_Buttons.Controls.Add(this.Btn_CreatXml, 1, 0);
-            this.tbl_Buttons.Controls.Add(this.button1, 2, 0);
-            this.tbl_Buttons.Controls.Add(this.cBx_Dateipfad, 3, 0);
+            this.tbl_Buttons.Controls.Add(this.Btn_File, 2, 0);
             this.tbl_Buttons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbl_Buttons.Location = new System.Drawing.Point(3, 3);
             this.tbl_Buttons.Name = "tbl_Buttons";
@@ -326,6 +351,18 @@
             this.tbl_Buttons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbl_Buttons.Size = new System.Drawing.Size(991, 34);
             this.tbl_Buttons.TabIndex = 18;
+            // 
+            // Btn_Change
+            // 
+            this.Btn_Change.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_Change.Enabled = false;
+            this.Btn_Change.Location = new System.Drawing.Point(250, 3);
+            this.Btn_Change.Name = "Btn_Change";
+            this.Btn_Change.Size = new System.Drawing.Size(241, 28);
+            this.Btn_Change.TabIndex = 17;
+            this.Btn_Change.Text = "Zelle verändern";
+            this.Btn_Change.UseVisualStyleBackColor = true;
+            this.Btn_Change.Click += new System.EventHandler(this.Btn_Change_Click);
             // 
             // tbl_Layout_Main
             // 
@@ -353,7 +390,7 @@
             this.ClientSize = new System.Drawing.Size(1021, 497);
             this.Controls.Add(this.tbl_Layout_Main);
             this.Name = "Fragen";
-            this.Text = "Form1";
+            this.Text = "Xml Ersteller";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -403,18 +440,20 @@
         private System.Windows.Forms.TextBox TxB_Antwort2;
         private System.Windows.Forms.TextBox TxB_Antwort3;
         private System.Windows.Forms.TextBox TxB_Antwort4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_Themengebiet;
+        private System.Windows.Forms.Label lbl_Frage;
+        private System.Windows.Forms.Label lbl_richtigeAntwort;
+        private System.Windows.Forms.Label lbl_Antwort2;
+        private System.Windows.Forms.Label lbl_Antwort3;
+        private System.Windows.Forms.Label lbl_Antwort4;
         private System.Windows.Forms.Button Btn_CreatXml;
-        private System.Windows.Forms.ComboBox cBx_Dateipfad;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_File;
         private System.Windows.Forms.TableLayoutPanel tbl_Eingabefelder;
         private System.Windows.Forms.TableLayoutPanel tbl_Buttons;
         private System.Windows.Forms.TableLayoutPanel tbl_Layout_Main;
+        private System.Windows.Forms.Button Btn_Change;
+        private System.Windows.Forms.TextBox TxB_Nummer;
+        private System.Windows.Forms.Label lbl_Nummer;
     }
 }
 

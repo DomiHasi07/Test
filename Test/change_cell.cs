@@ -15,10 +15,8 @@ namespace Test
         public string send_cell;
         public string ret_str;
         public change_cell()
-      
         {
             InitializeComponent();
-           
         }
 
         private void change_cell_Load(object sender, EventArgs e)
@@ -29,18 +27,37 @@ namespace Test
         private void Btn_Ok_Click(object sender, EventArgs e)
         {
             ret_str = textBox1.Text;
-            this.Close();
-        }
-
-        private void Btn_Accept_Click(object sender, EventArgs e)
-        {
+            this.Hide();
         }
 
         private void Btn_cancel_Click(object sender, EventArgs e)
         {
             ret_str = send_cell;
-            this.Close();
+            this.Hide();
         }
 
+        private void change_cell_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if(e.KeyCode == Keys.Escape)
+            {
+                ret_str = send_cell;
+                this.Hide();
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                ret_str = send_cell;
+                this.Hide();
+            }
+            else if(e.KeyCode == Keys.Enter)
+            {
+                ret_str = textBox1.Text;
+                this.Hide();
+            }
+        }
     }
 }
