@@ -79,6 +79,7 @@ namespace Test
             Daten.Tables[0].DefaultView.Sort = "Nummer ASC";
             dataGridView1.DataSource = Daten.Tables[0];
 
+
         }
 
         private void Text_geändert(object sender, EventArgs e)
@@ -130,6 +131,8 @@ namespace Test
                     dataGridView1.Rows.Clear();
                     dataGridView1.Refresh();
                     dataGridView1.DataSource = Daten.Tables[0];
+                    dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
                     Btn_CreatXml.Enabled = false;
                     geändert = false;
