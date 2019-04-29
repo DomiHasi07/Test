@@ -33,9 +33,9 @@ namespace Test
         {
             
 
-            dataGridView1.RowsRemoved += DataGridView1_RowsRemoved;
-            dataGridView1.RowsAdded += DataGridView1_RowsAdded;
-            dataGridView1.AllowUserToAddRows = false;
+            DgV_1.RowsRemoved += DataGridView1_RowsRemoved;
+            DgV_1.RowsAdded += DataGridView1_RowsAdded;
+            DgV_1.AllowUserToAddRows = false;
 
         }
 
@@ -77,7 +77,7 @@ namespace Test
             TxB_Antwort3.Text = "";
             TxB_Antwort4.Text = "";
             Daten.Tables[0].DefaultView.Sort = "Nummer ASC";
-            dataGridView1.DataSource = Daten.Tables[0];
+            DgV_1.DataSource = Daten.Tables[0];
 
 
         }
@@ -99,9 +99,7 @@ namespace Test
         {
             if (geändert)
             {
-                Daten.WriteXml(filepath);
-                Btn_CreatXml.Enabled = false;
-                geändert = false;
+                save_file();
             }
             else
             {
@@ -112,49 +110,43 @@ namespace Test
 
         private void Btn_File_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "XML Files (*.xml)|*.xml";
-            ofd.FilterIndex = 0;
-            ofd.DefaultExt = "xml";
-
-            if(ofd.ShowDialog() == DialogResult.OK)
+            if(!geändert)
             {
-                if(String.Equals(Path.GetExtension(ofd.FileName),".xml",StringComparison.OrdinalIgnoreCase))
-                {
-                    filepath = ofd.FileName;
-                    Daten.Clear();
-                    Daten.Reset();
-                    Daten.ReadXml(filepath);
-                    Daten.Tables[0].DefaultView.Sort = "Nummer ASC";
-
-                    dataGridView1.DataSource = null;
-                    dataGridView1.Rows.Clear();
-                    dataGridView1.Refresh();
-                    dataGridView1.DataSource = Daten.Tables[0];
-                    dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-
-                    Btn_CreatXml.Enabled = false;
-                    geändert = false;
-                }
-                else
-                {
-                    MessageBox.Show("Dieser Dateityp wird nicht unterstützt. Wählen Sie bitte eine XML Datei aus", "Falscher Dateityp", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                load_new_file();
             }
+            else
+            {
+                switch(MessageBox.Show("Wollen Sie die veränderte Datei speichern","Änderungen speichern?",MessageBoxButtons.YesNoCancel))
+                {
+                    case DialogResult.Yes:
+                        save_file();
+                        load_new_file();
+                        break;
+
+                    case DialogResult.No:
+                        load_new_file();
+                        break;
+
+                    case DialogResult.Cancel: 
+                        return;
+                        
+                }
+
+            }
+            
             
         }
 
         private void Btn_Change_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedCells.Count == 1)
+            if(DgV_1.SelectedCells.Count == 1)
             {
                 change_cell form = new change_cell();
-                form.send_cell = dataGridView1.SelectedCells[0].Value.ToString();
+                form.send_cell = DgV_1.SelectedCells[0].Value.ToString();
                 form.ShowDialog();
                 if (form.ret_str != form.send_cell)
                 {
-                    dataGridView1.SelectedCells[0].Value = form.ret_str.Trim();
+                    DgV_1.SelectedCells[0].Value = form.ret_str.Trim();
                     
                     geändert = true;
                     Btn_CreatXml.Enabled = true;
@@ -166,7 +158,7 @@ namespace Test
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedCells.Count == 1)
+            if(DgV_1.SelectedCells.Count == 1)
             {
                 Btn_Change.Enabled = true;
             }
@@ -174,6 +166,63 @@ namespace Test
             {
                 Btn_Change.Enabled = false;
             }
+        }
+
+        private void load_new_file()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "XML Files (*.xml)|*.xml";
+            ofd.FilterIndex = 0;
+            ofd.DefaultExt = "xml";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                if (String.Equals(Path.GetExtension(ofd.FileName), ".xml", StringComparison.OrdinalIgnoreCase))
+                {
+                    filepath = ofd.FileName;
+                    Daten.Clear();
+                    Daten.Reset();
+                    Daten.ReadXml(filepath);
+                    Daten.Tables[0].DefaultView.Sort = "Nummer ASC";
+
+                    DgV_1.DataSource = null;
+                    DgV_1.Rows.Clear();
+                    DgV_1.Refresh();
+                    DgV_1.DataSource = Daten.Tables[0];
+
+                    Btn_CreatXml.Enabled = false;
+                    geändert = false;
+                }
+                else
+                {
+                    MessageBox.Show("Dieser Dateityp wird nicht unterstützt. Wählen Sie bitte eine XML Datei aus", "Falscher Dateityp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+           
+        }
+
+        private void save_file()
+        {
+            Daten.WriteXml(filepath);
+            Btn_CreatXml.Enabled = false;
+            geändert = false;
+
+        }
+
+        private void Fragen_ResizeEnd(object sender, EventArgs e)
+        {
+
+            DgV_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgV_1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DgV_1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DgV_1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+        }
+
+
+        private void Fragen_ResizeBegin(object sender, EventArgs e)
+        {
+            DgV_1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            DgV_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
         }
     }
 }

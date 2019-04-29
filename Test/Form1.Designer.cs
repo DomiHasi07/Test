@@ -37,7 +37,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgV_1 = new System.Windows.Forms.DataGridView();
             this.Btn_Load = new System.Windows.Forms.Button();
             this.TxB_Themengebiet = new System.Windows.Forms.TextBox();
             this.TxB_Frage = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.tbl_Buttons = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_Change = new System.Windows.Forms.Button();
             this.tbl_Layout_Main = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgV_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.tbl_Eingabefelder.SuspendLayout();
             this.tbl_Buttons.SuspendLayout();
@@ -109,14 +109,14 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Antwort4";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // dataGridView1
+            // DgV_1
             // 
-            this.dataGridView1.AllowUserToResizeRows = false;
+            this.DgV_1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgV_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgV_1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgV_1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgV_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,14 +124,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(991, 377);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.DgV_1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgV_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgV_1.Location = new System.Drawing.Point(3, 43);
+            this.DgV_1.Name = "DgV_1";
+            this.DgV_1.ReadOnly = true;
+            this.DgV_1.Size = new System.Drawing.Size(991, 377);
+            this.DgV_1.TabIndex = 0;
+            this.DgV_1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Btn_Load
             // 
@@ -141,7 +141,7 @@
             this.Btn_Load.Name = "Btn_Load";
             this.Btn_Load.Size = new System.Drawing.Size(241, 28);
             this.Btn_Load.TabIndex = 9;
-            this.Btn_Load.Text = "Load";
+            this.Btn_Load.Text = "neue Zeile hinzufügen";
             this.Btn_Load.UseVisualStyleBackColor = true;
             this.Btn_Load.Click += new System.EventHandler(this.Btn_Load_Click);
             // 
@@ -273,7 +273,7 @@
             this.Btn_CreatXml.Name = "Btn_CreatXml";
             this.Btn_CreatXml.Size = new System.Drawing.Size(241, 28);
             this.Btn_CreatXml.TabIndex = 10;
-            this.Btn_CreatXml.Text = "Create_Xml";
+            this.Btn_CreatXml.Text = "Datei speichern";
             this.Btn_CreatXml.UseVisualStyleBackColor = true;
             this.Btn_CreatXml.Click += new System.EventHandler(this.Btn_CreatXml_Click);
             // 
@@ -289,7 +289,7 @@
             this.Btn_File.Name = "Btn_File";
             this.Btn_File.Size = new System.Drawing.Size(244, 28);
             this.Btn_File.TabIndex = 1;
-            this.Btn_File.Text = "File auswählen";
+            this.Btn_File.Text = "Datei auswählen";
             this.Btn_File.UseVisualStyleBackColor = true;
             this.Btn_File.Click += new System.EventHandler(this.Btn_File_Click);
             // 
@@ -385,7 +385,7 @@
             this.tbl_Layout_Main.ColumnCount = 1;
             this.tbl_Layout_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbl_Layout_Main.Controls.Add(this.tbl_Buttons, 0, 0);
-            this.tbl_Layout_Main.Controls.Add(this.dataGridView1, 0, 1);
+            this.tbl_Layout_Main.Controls.Add(this.DgV_1, 0, 1);
             this.tbl_Layout_Main.Controls.Add(this.tbl_Eingabefelder, 0, 2);
             this.tbl_Layout_Main.Location = new System.Drawing.Point(12, 12);
             this.tbl_Layout_Main.Name = "tbl_Layout_Main";
@@ -405,7 +405,9 @@
             this.Name = "Fragen";
             this.Text = "Xml Ersteller";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResizeBegin += new System.EventHandler(this.Fragen_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.Fragen_ResizeEnd);
+            ((System.ComponentModel.ISupportInitialize)(this.DgV_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.tbl_Eingabefelder.ResumeLayout(false);
             this.tbl_Eingabefelder.PerformLayout();
@@ -417,19 +419,19 @@
 
         private void DataGridView1_DataSourceChanged(object sender, System.EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
+            if (DgV_1.Rows.Count > 0)
             {
-                this.dataGridView1.Columns[1].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-                this.dataGridView1.Columns[0].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-                this.dataGridView1.Columns[2].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-                for (int i = 0; i <= dataGridView1.Columns.Count - 1; i++)
+                this.DgV_1.Columns[1].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+                this.DgV_1.Columns[0].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+                this.DgV_1.Columns[2].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+                for (int i = 0; i <= DgV_1.Columns.Count - 1; i++)
                 {
                     //store autosized widths
-                    int colw = dataGridView1.Columns[i].Width;
+                    int colw = DgV_1.Columns[i].Width;
                     //remove autosizing
-                    dataGridView1.Columns[i].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+                    DgV_1.Columns[i].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
                     //set width to calculated by autosize
-                    dataGridView1.Columns[i].Width = colw;
+                    DgV_1.Columns[i].Width = colw;
                 }
             }
 
@@ -445,7 +447,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgV_1;
         private System.Windows.Forms.Button Btn_Load;
         private System.Windows.Forms.TextBox TxB_Themengebiet;
         private System.Windows.Forms.TextBox TxB_Frage;
