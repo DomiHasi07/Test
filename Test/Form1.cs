@@ -61,7 +61,8 @@ namespace Test
             dr["Nummer"] = TxB_Nummer.Text.Trim();
             dr["Themengebiet"] = TxB_Themengebiet.Text.Trim();
             dr["Frage"] = TxB_Frage.Text.Trim();
-            dr["Antwort1"] = TxB_Antwort1.Text.Trim();
+            dr["Bild"] = TxB_Bild.Text.Trim();
+            dr["richtigeAntwort"] = TxB_Antwort1.Text.Trim();
             dr["Antwort2"] = TxB_Antwort4.Text.Trim();
             dr["Antwort3"] = TxB_Antwort2.Text.Trim();
             dr["Antwort4"] = TxB_Antwort3.Text.Trim();
@@ -69,6 +70,7 @@ namespace Test
             TxB_Nummer.Text = "";
             TxB_Themengebiet.Text = "";
             TxB_Frage.Text = "";
+            TxB_Bild.Text = "";
             TxB_Antwort1.Text = "";
             TxB_Antwort2.Text = "";
             TxB_Antwort3.Text = "";
@@ -245,6 +247,11 @@ namespace Test
                     MessageBox.Show("Dieser Dateityp wird nicht unterstützt. Wählen Sie bitte eine Bilddatei aus", "Falscher Dateityp", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void DgV_1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
