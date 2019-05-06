@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +57,11 @@
             this.tbl_Eingabefelder = new System.Windows.Forms.TableLayoutPanel();
             this.TxB_Nummer = new System.Windows.Forms.TextBox();
             this.lbl_Nummer = new System.Windows.Forms.Label();
+            this.Btn_Bild = new System.Windows.Forms.Button();
             this.tbl_Buttons = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_Change = new System.Windows.Forms.Button();
             this.tbl_Layout_Main = new System.Windows.Forms.TableLayoutPanel();
+            this.TxB_Bild = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgV_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.tbl_Eingabefelder.SuspendLayout();
@@ -112,24 +114,25 @@
             // DgV_1
             // 
             this.DgV_1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DgV_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.DgV_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgV_1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgV_1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgV_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgV_1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgV_1.DefaultCellStyle = dataGridViewCellStyle6;
             this.DgV_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgV_1.Location = new System.Drawing.Point(3, 43);
+            this.DgV_1.Location = new System.Drawing.Point(6, 43);
+            this.DgV_1.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.DgV_1.Name = "DgV_1";
             this.DgV_1.ReadOnly = true;
-            this.DgV_1.Size = new System.Drawing.Size(991, 377);
+            this.DgV_1.Size = new System.Drawing.Size(985, 367);
             this.DgV_1.TabIndex = 0;
             this.DgV_1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -148,54 +151,54 @@
             // TxB_Themengebiet
             // 
             this.TxB_Themengebiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Themengebiet.Location = new System.Drawing.Point(144, 23);
+            this.TxB_Themengebiet.Location = new System.Drawing.Point(126, 33);
             this.TxB_Themengebiet.Name = "TxB_Themengebiet";
-            this.TxB_Themengebiet.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Themengebiet.Size = new System.Drawing.Size(117, 20);
             this.TxB_Themengebiet.TabIndex = 3;
             this.TxB_Themengebiet.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Frage
             // 
             this.TxB_Frage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Frage.Location = new System.Drawing.Point(285, 23);
+            this.TxB_Frage.Location = new System.Drawing.Point(249, 33);
             this.TxB_Frage.Name = "TxB_Frage";
-            this.TxB_Frage.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Frage.Size = new System.Drawing.Size(117, 20);
             this.TxB_Frage.TabIndex = 4;
             this.TxB_Frage.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Antwort1
             // 
             this.TxB_Antwort1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Antwort1.Location = new System.Drawing.Point(426, 23);
+            this.TxB_Antwort1.Location = new System.Drawing.Point(372, 33);
             this.TxB_Antwort1.Name = "TxB_Antwort1";
-            this.TxB_Antwort1.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Antwort1.Size = new System.Drawing.Size(117, 20);
             this.TxB_Antwort1.TabIndex = 5;
             this.TxB_Antwort1.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Antwort2
             // 
             this.TxB_Antwort2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Antwort2.Location = new System.Drawing.Point(567, 23);
+            this.TxB_Antwort2.Location = new System.Drawing.Point(495, 33);
             this.TxB_Antwort2.Name = "TxB_Antwort2";
-            this.TxB_Antwort2.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Antwort2.Size = new System.Drawing.Size(117, 20);
             this.TxB_Antwort2.TabIndex = 6;
             this.TxB_Antwort2.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Antwort3
             // 
             this.TxB_Antwort3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Antwort3.Location = new System.Drawing.Point(708, 23);
+            this.TxB_Antwort3.Location = new System.Drawing.Point(618, 33);
             this.TxB_Antwort3.Name = "TxB_Antwort3";
-            this.TxB_Antwort3.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Antwort3.Size = new System.Drawing.Size(117, 20);
             this.TxB_Antwort3.TabIndex = 7;
             this.TxB_Antwort3.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
             // TxB_Antwort4
             // 
             this.TxB_Antwort4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Antwort4.Location = new System.Drawing.Point(849, 23);
+            this.TxB_Antwort4.Location = new System.Drawing.Point(741, 33);
             this.TxB_Antwort4.Name = "TxB_Antwort4";
-            this.TxB_Antwort4.Size = new System.Drawing.Size(139, 20);
+            this.TxB_Antwort4.Size = new System.Drawing.Size(117, 20);
             this.TxB_Antwort4.TabIndex = 8;
             this.TxB_Antwort4.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
@@ -203,9 +206,9 @@
             // 
             this.lbl_Themengebiet.AutoSize = true;
             this.lbl_Themengebiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Themengebiet.Location = new System.Drawing.Point(144, 0);
+            this.lbl_Themengebiet.Location = new System.Drawing.Point(126, 0);
             this.lbl_Themengebiet.Name = "lbl_Themengebiet";
-            this.lbl_Themengebiet.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Themengebiet.Size = new System.Drawing.Size(117, 30);
             this.lbl_Themengebiet.TabIndex = 8;
             this.lbl_Themengebiet.Text = "Themengebiet";
             this.lbl_Themengebiet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,9 +217,9 @@
             // 
             this.lbl_Frage.AutoSize = true;
             this.lbl_Frage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Frage.Location = new System.Drawing.Point(285, 0);
+            this.lbl_Frage.Location = new System.Drawing.Point(249, 0);
             this.lbl_Frage.Name = "lbl_Frage";
-            this.lbl_Frage.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Frage.Size = new System.Drawing.Size(117, 30);
             this.lbl_Frage.TabIndex = 9;
             this.lbl_Frage.Text = "Frage";
             this.lbl_Frage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +228,9 @@
             // 
             this.lbl_richtigeAntwort.AutoSize = true;
             this.lbl_richtigeAntwort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_richtigeAntwort.Location = new System.Drawing.Point(426, 0);
+            this.lbl_richtigeAntwort.Location = new System.Drawing.Point(372, 0);
             this.lbl_richtigeAntwort.Name = "lbl_richtigeAntwort";
-            this.lbl_richtigeAntwort.Size = new System.Drawing.Size(135, 20);
+            this.lbl_richtigeAntwort.Size = new System.Drawing.Size(117, 30);
             this.lbl_richtigeAntwort.TabIndex = 10;
             this.lbl_richtigeAntwort.Text = "richtige Antwort";
             this.lbl_richtigeAntwort.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,9 +239,9 @@
             // 
             this.lbl_Antwort2.AutoSize = true;
             this.lbl_Antwort2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Antwort2.Location = new System.Drawing.Point(567, 0);
+            this.lbl_Antwort2.Location = new System.Drawing.Point(495, 0);
             this.lbl_Antwort2.Name = "lbl_Antwort2";
-            this.lbl_Antwort2.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Antwort2.Size = new System.Drawing.Size(117, 30);
             this.lbl_Antwort2.TabIndex = 11;
             this.lbl_Antwort2.Text = "Antwort 2";
             this.lbl_Antwort2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,9 +250,9 @@
             // 
             this.lbl_Antwort3.AutoSize = true;
             this.lbl_Antwort3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Antwort3.Location = new System.Drawing.Point(708, 0);
+            this.lbl_Antwort3.Location = new System.Drawing.Point(618, 0);
             this.lbl_Antwort3.Name = "lbl_Antwort3";
-            this.lbl_Antwort3.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Antwort3.Size = new System.Drawing.Size(117, 30);
             this.lbl_Antwort3.TabIndex = 12;
             this.lbl_Antwort3.Text = "Antwort 3";
             this.lbl_Antwort3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,9 +261,9 @@
             // 
             this.lbl_Antwort4.AutoSize = true;
             this.lbl_Antwort4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Antwort4.Location = new System.Drawing.Point(849, 0);
+            this.lbl_Antwort4.Location = new System.Drawing.Point(741, 0);
             this.lbl_Antwort4.Name = "lbl_Antwort4";
-            this.lbl_Antwort4.Size = new System.Drawing.Size(139, 20);
+            this.lbl_Antwort4.Size = new System.Drawing.Size(117, 30);
             this.lbl_Antwort4.TabIndex = 13;
             this.lbl_Antwort4.Text = "Antwort 4";
             this.lbl_Antwort4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -295,14 +298,15 @@
             // 
             // tbl_Eingabefelder
             // 
-            this.tbl_Eingabefelder.ColumnCount = 7;
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tbl_Eingabefelder.ColumnCount = 8;
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tbl_Eingabefelder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tbl_Eingabefelder.Controls.Add(this.TxB_Nummer, 0, 1);
             this.tbl_Eingabefelder.Controls.Add(this.lbl_Nummer, 0, 0);
             this.tbl_Eingabefelder.Controls.Add(this.TxB_Themengebiet, 1, 1);
@@ -317,21 +321,23 @@
             this.tbl_Eingabefelder.Controls.Add(this.lbl_Frage, 2, 0);
             this.tbl_Eingabefelder.Controls.Add(this.lbl_Antwort2, 4, 0);
             this.tbl_Eingabefelder.Controls.Add(this.lbl_richtigeAntwort, 3, 0);
+            this.tbl_Eingabefelder.Controls.Add(this.Btn_Bild, 7, 0);
+            this.tbl_Eingabefelder.Controls.Add(this.TxB_Bild, 7, 1);
             this.tbl_Eingabefelder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbl_Eingabefelder.Location = new System.Drawing.Point(3, 426);
+            this.tbl_Eingabefelder.Location = new System.Drawing.Point(3, 416);
             this.tbl_Eingabefelder.Name = "tbl_Eingabefelder";
             this.tbl_Eingabefelder.RowCount = 2;
-            this.tbl_Eingabefelder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tbl_Eingabefelder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tbl_Eingabefelder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tbl_Eingabefelder.Size = new System.Drawing.Size(991, 44);
+            this.tbl_Eingabefelder.Size = new System.Drawing.Size(991, 54);
             this.tbl_Eingabefelder.TabIndex = 17;
             // 
             // TxB_Nummer
             // 
             this.TxB_Nummer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxB_Nummer.Location = new System.Drawing.Point(3, 23);
+            this.TxB_Nummer.Location = new System.Drawing.Point(3, 33);
             this.TxB_Nummer.Name = "TxB_Nummer";
-            this.TxB_Nummer.Size = new System.Drawing.Size(135, 20);
+            this.TxB_Nummer.Size = new System.Drawing.Size(117, 20);
             this.TxB_Nummer.TabIndex = 2;
             this.TxB_Nummer.TextChanged += new System.EventHandler(this.Text_geändert);
             // 
@@ -341,10 +347,23 @@
             this.lbl_Nummer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Nummer.Location = new System.Drawing.Point(3, 0);
             this.lbl_Nummer.Name = "lbl_Nummer";
-            this.lbl_Nummer.Size = new System.Drawing.Size(135, 20);
+            this.lbl_Nummer.Size = new System.Drawing.Size(117, 30);
             this.lbl_Nummer.TabIndex = 14;
             this.lbl_Nummer.Text = "Nummer";
             this.lbl_Nummer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Btn_Bild
+            // 
+            this.Btn_Bild.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_Bild.Enabled = false;
+            this.Btn_Bild.Location = new System.Drawing.Point(864, 0);
+            this.Btn_Bild.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.Btn_Bild.Name = "Btn_Bild";
+            this.Btn_Bild.Size = new System.Drawing.Size(124, 30);
+            this.Btn_Bild.TabIndex = 21;
+            this.Btn_Bild.Text = "Bild auswählen";
+            this.Btn_Bild.UseVisualStyleBackColor = true;
+            this.Btn_Bild.Click += new System.EventHandler(this.Btn_Bild_Click);
             // 
             // tbl_Buttons
             // 
@@ -392,9 +411,17 @@
             this.tbl_Layout_Main.RowCount = 3;
             this.tbl_Layout_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tbl_Layout_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tbl_Layout_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tbl_Layout_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tbl_Layout_Main.Size = new System.Drawing.Size(997, 473);
             this.tbl_Layout_Main.TabIndex = 19;
+            // 
+            // TxB_Bild
+            // 
+            this.TxB_Bild.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxB_Bild.Location = new System.Drawing.Point(864, 33);
+            this.TxB_Bild.Name = "TxB_Bild";
+            this.TxB_Bild.Size = new System.Drawing.Size(124, 20);
+            this.TxB_Bild.TabIndex = 22;
             // 
             // Fragen
             // 
@@ -469,6 +496,8 @@
         private System.Windows.Forms.Button Btn_Change;
         private System.Windows.Forms.TextBox TxB_Nummer;
         private System.Windows.Forms.Label lbl_Nummer;
+        private System.Windows.Forms.Button Btn_Bild;
+        private System.Windows.Forms.TextBox TxB_Bild;
     }
 }
 

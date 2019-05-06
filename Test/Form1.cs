@@ -31,12 +31,9 @@ namespace Test
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-
             DgV_1.RowsRemoved += DataGridView1_RowsRemoved;
             DgV_1.RowsAdded += DataGridView1_RowsAdded;
             DgV_1.AllowUserToAddRows = false;
-
         }
 
         private void DataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -189,9 +186,12 @@ namespace Test
                     DgV_1.Rows.Clear();
                     DgV_1.Refresh();
                     DgV_1.DataSource = Daten.Tables[0];
+                    DgV_1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    DgV_1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
                     Btn_CreatXml.Enabled = false;
                     geändert = false;
+                    Btn_Bild.Enabled = true;
                 }
                 else
                 {
@@ -211,18 +211,40 @@ namespace Test
 
         private void Fragen_ResizeEnd(object sender, EventArgs e)
         {
-
-            DgV_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgV_1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            DgV_1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            DgV_1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            if(DgV_1.DataSource!=null)
+            {
+                DgV_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                DgV_1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            }
         }
 
 
         private void Fragen_ResizeBegin(object sender, EventArgs e)
         {
-            DgV_1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-            DgV_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            if(DgV_1.DataSource != null)
+            {
+                DgV_1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                DgV_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            }
+        }
+
+        private void Btn_Bild_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog Bild = new OpenFileDialog();
+            Bild.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            Bild.FilterIndex = 0;
+            Bild.DefaultExt = "*.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            if(Bild.ShowDialog() == DialogResult.OK)
+            {
+                if (Bild.FileName.EndsWith(".jpg")|| Bild.FileName.EndsWith(".jpeg")|| Bild.FileName.EndsWith(".png")|| Bild.FileName.EndsWith(".jpe")|| Bild.FileName.EndsWith(".jfif"))
+                {
+                    TxB_Bild.Text = Path.GetFileName(Bild.FileName);
+                }
+                else
+                {
+                    MessageBox.Show("Dieser Dateityp wird nicht unterstützt. Wählen Sie bitte eine Bilddatei aus", "Falscher Dateityp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
