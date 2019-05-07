@@ -205,10 +205,12 @@ namespace Test
 
         private void save_file()
         {
-            Daten.WriteXml(filepath);
+            DataView view = Daten.Tables[0].DefaultView;
+            view.Sort = "Nummer ASC";
+            DataTable sorted = view.ToTable();
+            sorted.WriteXml(filepath);
             Btn_CreatXml.Enabled = false;
             geändert = false;
-
         }
 
         private void Fragen_ResizeEnd(object sender, EventArgs e)
